@@ -8,14 +8,14 @@
 //abrir conexión al manejador
 //verificar que exista el registro de acceso para este usuario, desde este equipo, a esta BD en el archivo _hba.conf
 
-$con = pg_connect ("port=5432 dbname=biblio user=alumno1 password=pumaso13") or die (pg_last_error());
+$con = pg_connect ("port=5432 dbname=libros user=alumno1 password=pumaso13") or die (pg_last_error());
 //print_r($con);
 if($con){
 	//echo "se abre la conexion a la BD";
 	//genera la consulta
 	//$query = "insert into alumnos (nombre_alumno,apaterno_alumno,amaterno_alumno,tel_alumno,correo_alumno) values('".$nombre." ',' ".$apaterno." ',' ".$amaterno." ',' ".$telefono." ',' ".$correoe."')";
 	
-	$query = "select nombre_libro,edicion,editorial,apaterno_autor,amaterno_autor,nombre_autor from alumnos";
+	$query = "select id_libro,nombre_libro,edicion,editorial,apaterno_autor,amaterno_autor,nombre_autor from libros";
 	$query = pg_query($con,$query) or die (pg_last_error());
 	//$arreglo = pg_fetch_all($query);
 	echo "<pre>";
@@ -29,6 +29,7 @@ if($con){
 <table>
 	<thead>
 		<tr>
+			<th>ID</th>
 			<th>Nombre del libro</th>
 			<th>Edicion</th>
 			<th>Editorial</th>
@@ -45,6 +46,7 @@ if($con){
 		while($row = pg_fetch_array($query)){
 			//echo "el nombre: ".$row['nombre_alumno']. "el paterno: ".$row['apaterno_alumno']."el materno: ".$row['amaterno_alumno'];
 			echo "<tr>";
+			echo "<td>".$row['id_libro']."</td>";
 			echo "<td>".$row['nombre_libro']."</td>";
 			echo "<td>".$row['edicion']."</td>";
 			echo "<td>".$row['editorial']."</td>";
