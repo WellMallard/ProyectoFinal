@@ -1,15 +1,12 @@
 
 <html>
+<link rel="stylesheet" href="/css/proyecto.css" type="text/css" />
 <head>
 <h1>Inicio de sesión</h1>
 </head>
+<p>Bienvenido a la base de datos de libros de la UNAM, por favor inicie sesión.</p>
 <body>
 <?php
-//$login == $_GET['login'];
-//if($login == false){
-//	echo "El usuario o el password son incorrectos";
-//}
-//else{
 ?>
 	<form name="login" action="login.php" method="post">
 		<label for="nombre">Nombre:</label>
@@ -19,7 +16,7 @@
 		<input type="submit" name="Enviar" value="Enviar">
 	</form>
 <?php
-//}
+
 ?>
 </body>
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" href="/css/proyecto.css" type="text/css" />
 	<head>	
 		<meta charset = "UTF-8">
 		<title>Formulario de edición de libros</title>
@@ -10,15 +11,15 @@
 $id = $_GET['id'];
 //echo "el id del alumno es " .$id;
 //Consulta los datos del alumno con ese ID, para mostrarlos en el formulario
-$con = pg_connect ("port=5432 dbname=libros user=bibliotecario password=pumaso13") or die (pg_last_error());
+$con = pg_connect ("port=5432 dbname=biblioteca user=bibliotecario password=pumaso13") or die (pg_last_error());
 if($con){
 	$query = "select nombre_libro, edicion, editorial, apaterno_autor, amaterno_autor, nombre_autor from libros where id_libro='".$id."'";
 	$query =pg_query($con,$query);
 	$resultado = pg_fetch_assoc($query);
-	print_r($resultado);
+	//print_r($resultado);
 ?>
-		<h1>Formulario de alta de libros</h1>
-		<p>Favor de ingresar los siguientes datos para registrar los libros:</p>
+		<h1>Formulario de edición de libros</h1>
+		<p>Favor de ingresar los siguientes datos para editar el libro que elegiste:</p>
 		<form name ="alta" action ="guarda_edicion.php" method = "post" >
 			<label for = "nombrel">Nombre de libro: </label>
 			<input type = "text" name = "nombrel" value="<?php echo $resultado['nombre_libro']; ?>"><br/>
@@ -44,6 +45,8 @@ if($con){
 		</form>
 
 <?php
+	echo "<br>";
+	echo "<a href= 'index.php'>Ir al inicio</a></br>";
 }
 ?>
 	</body>

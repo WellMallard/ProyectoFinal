@@ -1,0 +1,172 @@
+html, body{
+	margin: 1px;
+	padding: 1px;
+}
+
+body{
+	Font: 80.5% Verdana, Helvetica, Arial, sans-serif;
+	color: #343A40;
+	background: #E1E8EB;
+}
+
+#container{
+	font-size: 1.2em;
+	margin: 10px 2em;
+}
+
+h1{
+	font-style: bold;
+	font-weight: bold;
+	font-size: 2em;
+	font-color: #E1E8EB;
+	margin-bottom: 3px 2em;
+	text-align: center;
+	text-shadow: #ffc107 6px 6px 4px;
+}
+
+body{
+	text-indent: 25;	
+	font-style: italic;
+	font-size: 1.5em;
+	font-color: #E1E8EB;
+	margin-bottom: 3px 2em;
+}
+
+code{
+	font-size: 2.2em;
+	margin-bottom: 3px 2em;
+}
+
+a{
+	margin-bottom: 1px 1em;
+	background-color: #FFED99;
+	padding: .1px;
+	margin: .1px;
+	border: 1px solid #7952b3;
+}
+
+table{
+	width; 100%;
+	border: 1px solid #FFC107;
+	background: #B6C9F0;
+}
+
+th, td {
+	width: 25%;
+	text-align: center;
+	vertical-align: top;
+	border: 1px solid #FFC107;
+	border-collapse: collapse;
+	padding: 0.3em;
+	caption-side: bottom;
+}
+
+caption{
+	padding 0.3em;
+	color: #fff;
+	background: #000;
+}
+
+th{
+	background: #77ACF1;
+}
+
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400);
+form{
+  padding: 60px;
+  max-width: 400px;
+  background-color: #B6C9F0;
+  margin: 0 auto;
+}
+
+form input, form textarea{
+  margin-bottom: 15px;
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; 
+  border: none; 
+  color: #7952B3; 
+  font-size: 1em;
+  resize: horizontal; 
+}
+
+form button {
+	display: block;
+	background-color: #FFC107;
+	padding: 10px 45px 10px 45px;
+	border: 0;
+	font-size: 1em; 
+	color: 	white;
+  font-family: "Roboto", sans-serif;
+}
+form button: hover{
+	background-color: #FFC107;
+}
+textarea { resize: none; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+
+svg {
+    display: block;
+    font: 10.5em 'Montserrat';
+    width: 960px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.text-copy {
+    fill: none;
+    stroke: white;
+    stroke-dasharray: 6% 29%;
+    stroke-width: 5px;
+    stroke-dashoffset: 0%;
+    animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1){
+	stroke: #03256C;
+	animation-delay: -1;
+}
+
+.text-copy:nth-child(2){
+	stroke: #2541B2;
+	animation-delay: -2s;
+}
+
+.text-copy:nth-child(3){
+	stroke: #1768AC;
+	animation-delay: -3s;
+}
+
+.text-copy:nth-child(4){
+	stroke: #E5D549;
+	animation-delay: -4s;
+}
+
+.text-copy:nth-child(5){
+	stroke: #2940D3;
+	animation-delay: -5s;
+}
+
+@keyframes stroke-offset{
+	100% {stroke-dashoffset: -35%;}
+}

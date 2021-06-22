@@ -1,5 +1,11 @@
-<?php
+<html>
+<link rel="stylesheet" href="/css/proyecto.css" type="text/css" />
+<script src="js/alta.js"></script>
+<h1>Página de estado del registro de libros</h1>
+<h2>El estado del libro es el siguiente:</h2>
 
+</html>
+<?php
 /*alta_alumno.php
  * recibe los datos de form_libros.php, los procesa e inserta en la BD
  * author: OscarMau
@@ -15,7 +21,7 @@ $nombrea = $_POST['nombrea'];
 
 //abrir conexión al manejador
 //verificar que exista el registro de acceso para este usuario, desde este equipo, a esta BD en el archivo _hba.conf
-$con = pg_connect ("port=5432 dbname=libros user=bibliotecario password=pumaso13") or die (pg_last_error());
+$con = pg_connect ("port=5432 dbname=biblioteca user=bibliotecario password=pumaso13") or die (pg_last_error());
 //print_r($con);
 if($con){
 	//echo "se abre la conexion a la BD";
@@ -24,8 +30,10 @@ if($con){
 	$query = pg_query($con,$query) or die (pg_last_error());
 	if($query){
 		echo "<p>Se guardo el registro del libro</p>";
-		echo "<a href= 'index.php'>Volver al inicio</a></br>";
-		echo "<a href= 'form_libros.php'>Volver al formulario de registro</a>";
+		echo "<br>";
+		echo "<a href= 'index.php'>Ver el listado de libros</a></br>";
+		echo "<br>";
+		echo "<a href= 'form_libros.php'>Volver a agregar otro libro</a>";
 	}else{
 		echo"No se pudo ejecutar la secuencia SQL";
 	}

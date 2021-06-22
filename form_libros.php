@@ -1,18 +1,19 @@
 <?php
 session_start();
-//$_SESSION['count'] += 1;
 if($_SESSION['auth'] == true){
+
 ?>
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" href="/css/proyecto.css" type="text/css"/>
 	<head>	
 		<meta charset = "UTF-8">
 		<title>Formulario de alta libros</title>
 		<script src="js/primero.js"></script>
 	</head>
 	<body>
-		<h1>Formulario de alta de libors</h1>
-		<p>Favor de ingresar los siguientes datos para registrar los libros:</p>
+		<h1>Formulario de alta de libros</h1>
+		<p>Favor de ingresar los siguientes datos para registrar los libros en la base de datos:</p>
 		<form name ="alta" action ="alta.php" method = "post" >
 			<label for = "nombrel">Nombre del libro: </label>
 			<input type = "text" name = "nombrel"><br/>
@@ -30,13 +31,16 @@ if($_SESSION['auth'] == true){
 			</form>
 
 	</body>
-
-
+<?php
+echo "<br>";
+echo "<a href= 'index.php'>Ir al inicio</a></br>";
+?>
 
 </html>
 <?php
 }
 else{
-	header ('Location: inicio.php');
+	header('Location: inicio.php');
 }
+
 ?>
